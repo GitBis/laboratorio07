@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="viewmodel"
+            type="com.example.labo05.ui.movie.MovieViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/backgroundLayout"
+        tools:context=".ui.movie.NewMovieFragment">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/newmovie"
+            android:textColor="@color/white"
+            android:textSize="@dimen/textSize"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.495"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.083" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/nombre"
+            android:layout_width="@dimen/input_text"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/input_text_Margin"
+            android:background="@color/cardLayout"
+            android:hint="@string/name"
+            android:textColorHint="@color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/nombretext"
+                android:text="@={viewmodel.name}"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/input_text_size"
+                android:textColor="@color/white"
+                android:textStyle="bold" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/categoria"
+            android:layout_width="@dimen/input_text"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/input_text_Margin"
+            android:background="@color/cardLayout"
+            android:hint="@string/category"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/nombre">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/categoriatext"
+                android:text="@={viewmodel.category}"
+                android:layout_width="@dimen/input_text"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/input_text_size"
+                android:textColor="@color/white"
+                android:textStyle="bold" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/descripcion"
+            android:layout_width="@dimen/input_text"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/input_text_Margin"
+            android:background="@color/cardLayout"
+            android:hint="@string/description"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/categoria">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/descripciontext"
+                android:text="@={viewmodel.description}"
+                android:layout_width="@dimen/input_text"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/input_text_size"
+                android:textColor="@color/white"
+                android:textStyle="bold" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/calificacion"
+            android:layout_width="@dimen/input_text"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/input_text_Margin"
+            android:background="@color/cardLayout"
+            android:hint="@string/calification"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/descripcion">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/calificationtext"
+                android:text="@={viewmodel.qualification}"
+                android:layout_width="@dimen/input_text"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/input_text_size"
+                android:textColor="@color/white"
+                android:textStyle="bold" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <Button
+            android:id="@+id/submit"
+            android:onClick="@{() -> viewmodel.createMovie()}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="64dp"
+            android:backgroundTint="@color/buttonColor"
+            android:text="Submit"
+            android:textColor="@color/black"
+            android:textColorHint="#E82B2B"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/calificacion" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

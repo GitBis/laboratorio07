@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="viewmodel"
+            type="com.example.labo05.ui.movie.MovieViewModel" />
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/backgroundLayout"
+        tools:context=".ui.movie.BillboardFragment">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="28dp"
+            android:text="Billoboard"
+            android:textColor="@color/white"
+            android:textSize="40dp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.457"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardViewStarWars"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/cardView_height"
+            android:layout_marginStart="@dimen/cardView_marginLeft"
+            android:layout_marginEnd="@dimen/cardView_marginRight"
+            android:layout_marginTop="@dimen/cardView_marginUp"
+            android:backgroundTint="@color/cardLayout"
+            android:clickable="true"
+            app:cardCornerRadius="@dimen/cardView_radius"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/imageStarWars"
+                    android:layout_width="@dimen/image_billboard_width"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/image_billboard_margin"
+                    app:srcCompat="@drawable/star_wars" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/textViewStarWarsTit"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/text_billboard_margin"
+                        android:text="@string/starWars_tittle"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/text_billboard_size"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/textViewStarWarsCal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/text_billboard_margin"
+                        android:text="@string/starWars_calification"
+                        android:textAlignment="center"
+                        android:textColor="@color/calification"
+                        android:textSize="@dimen/calification_billboard_size"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardViewHarry"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/cardView_height"
+            android:layout_marginStart="@dimen/cardView_marginLeft"
+            android:layout_marginEnd="@dimen/cardView_marginRight"
+            android:layout_marginTop="@dimen/cardView_marginBetween"
+            android:backgroundTint="@color/cardLayout"
+            app:cardCornerRadius="@dimen/cardView_radius"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cardViewStarWars">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/imageViewHarry"
+                    android:layout_width="@dimen/image_billboard_width"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/image_billboard_margin"
+                    app:srcCompat="@drawable/harry_potter" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/textViewHarryTit"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/text_billboard_margin"
+                        android:text="@string/harryPotter_tittle"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/text_billboard_size"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/textViewHarryCal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/text_billboard_margin"
+                        android:text="@string/harryPotter_calification"
+                        android:textAlignment="center"
+                        android:textColor="@color/calification"
+                        android:textSize="@dimen/calification_billboard_size"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/floatingActionButton2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="156dp"
+            android:clickable="true"
+            android:contentDescription="@string/newMovie"
+            android:contextClickable="false"
+            app:backgroundTint="@color/buttonColor"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.887"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cardViewHarry"
+            app:layout_constraintVertical_bias="0.509"
+            app:srcCompat="@android:drawable/ic_input_add" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
